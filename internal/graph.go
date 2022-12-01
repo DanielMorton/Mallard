@@ -2,23 +2,23 @@ package internal
 
 import mapset "github.com/deckarep/golang-set/v2"
 
-type Graph struct {
+type VertexSet struct {
 	vertices mapset.Set[vertex]
 }
 
-func (g *Graph) Add(v vertex) {
+func (g *VertexSet) Add(v vertex) {
 	g.vertices.Add(v)
 }
 
-func (g *Graph) IsVertex(v vertex) bool {
+func (g *VertexSet) IsVertex(v vertex) bool {
 	return g.vertices.Contains(v)
 }
 
-func (g *Graph) Order() int {
+func (g *VertexSet) Order() int {
 	return g.vertices.Cardinality()
 }
 
-func (g *Graph) Remove(v vertex) {
+func (g *VertexSet) Remove(v vertex) {
 	if g.IsVertex(v) {
 		g.vertices.Remove(v)
 	}

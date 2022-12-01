@@ -3,7 +3,7 @@ package internal
 import mapset "github.com/deckarep/golang-set/v2"
 
 type SimpleGraph struct {
-	Graph
+	VertexSet
 	edges map[vertex]mapset.Set[vertex]
 }
 
