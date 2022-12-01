@@ -14,7 +14,7 @@ func (e *edge) End() vertex {
 	return e.end
 }
 
-func makeEdge(start, end vertex) *edge {
+func NewEdge(start, end vertex) *edge {
 	e := &edge{start: start, end: end}
 	return e
 }
