@@ -54,12 +54,10 @@ func (g *SimpleGraph) IsEdge(e edge) bool {
 	return g.edges[e.start].Contains(e.end)
 }
 
-func build(edges []edge) *SimpleGraph {
+func NewSimpleGraph(edges []edge) *SimpleGraph {
 	graph := &SimpleGraph{edges: make(map[vertex]mapset.Set[vertex])}
 	for _, e := range edges {
-		graph.AddVertex(e.start)
-		graph.AddVertex(e.end)
-		graph.edges[e.start].Add(e.end)
+		graph.AddEdge(e)
 	}
 	return graph
 }

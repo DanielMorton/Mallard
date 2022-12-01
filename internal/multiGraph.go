@@ -66,3 +66,11 @@ func (g *MuliGraph) IsEdge(e edge) bool {
 	_, ok := g.edges[e.start][e.end]
 	return ok
 }
+
+func NewMultiGraph(edges []edge) *MuliGraph {
+	graph := &MuliGraph{edges: make(map[vertex]map[vertex]int)}
+	for _, e := range edges {
+		graph.AddEdge(e)
+	}
+	return graph
+}
